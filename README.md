@@ -106,3 +106,27 @@ We have provided test data for all the resources.
 -   From the React application show a list of all _projects_ using the API you built.
 -   Add functionality to show the details of a project, including its actions, when clicking a project name in the list. Use React Router to navigate to a separate route to show the project details.
 -   Add styling!
+
+### Interview Questions (updated)
+
+- The core features of Node.js and Express and why they are useful.
+
+Node.js allows writing server code that was only able to be written using higher level languages like C, C++, Python, Java, etc.  Node can be useful for many reasons, like using the same language for client & server to make it easier to share code between the two.  It's single threaded, so it can be easier than handling multiple threads.  Node is also Asynchronous and Event Driven, so it will take full advantage of the processor it's running on, which is also important since node will be running on a single cpu.
+
+Express simplifies the process of creating web apps and services, it also gives us the ability to use things like Middleware, Routing, and a ton of extra helper functions, most notably the extension methods added to req/res objects.
+
+- Understand and explain the use of Middleware?
+
+Middleware will have access to your request and response objects, as well as the use of the next function in the app's req-res cycle.  We often have a chain of functions that will run in succession to modify or add any data and finally send the response back to the browser.
+
+- The basic principles of the REST architectural style.
+
+Everything is a resource, each one of them are accessable via some unique URI, they have multiple representations, communications happens over a stateless protocol, and management happens with HTTP methods.
+
+- Understand and explain the use of Express Routers.
+
+Routing is how the app's endpoints (URIs) respond to the client's requests.  You can define routing by using methods of the app/server object created by express, like get, post, put, remove, etc. Using Express Routers will essentially keep all of your routing clean and extremely easy to manage.
+
+- Describe tooling used to manually test the correctness of an API.
+
+I personally use Insomnia to test my APIs.  This software allows the sending and receiving of requests and responses to the server, providing a GUI and visual results allowing all of this to happen in real time without the need of coding your requests manually in a separate web app.
