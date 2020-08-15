@@ -29,7 +29,7 @@ router.post('/', validate, async (req, res) => {
     }
 })
 
-router.put('/:id', validate, async (req, res) => {
+router.put('/:id', validateId, validate, async (req, res) => {
     try {
         const result = await db.update(req.params.id, req.body)
         res.status(200).json(result)
@@ -38,7 +38,7 @@ router.put('/:id', validate, async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', validateId, async (req, res, next) => {
     try {
         const result = await db.remove(req.params.id)
         res.status(200).json(result)
@@ -53,7 +53,6 @@ function validateId(req, res, next) {
         if (!result) {
             res.status(404).json({ message: "Invalid action id" })
         } else {
-            req.action = result
             next()
         }
       })
